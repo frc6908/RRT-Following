@@ -239,10 +239,10 @@ public final class Main {
 
     xEntry1.setDouble(-1000);
     yEntry1.setDouble(-1000);
-    sizeEntry1.setDouble(-1000);
+    sizeEntry1.setDouble(0);
     xEntry2.setDouble(-1000);
     yEntry2.setDouble(-1000);
-    sizeEntry2.setDouble(-1000);
+    sizeEntry2.setDouble(0);
 
     if (server) {
       System.out.println("Setting up NetworkTables server");
@@ -269,11 +269,17 @@ public final class Main {
                 // upload centerX and size of the contour to network tables
                 xEntry1.setDouble(r.x + (r.width / 2));
                 sizeEntry1.setDouble(r.area());
-                // yEntry1.setDouble(outs.get(0).pt.y);
-                // sizeEntry1.setDouble(outs.get(0).size);
-                // xEntry2.setDouble(outs.get(1).pt.x);
-                // yEntry2.setDouble(outs.get(1).pt.y);
-                // sizeEntry2.setDouble(outs.get(1).size);
+                /* 
+                yEntry1.setDouble(outs.get(0).pt.y);
+                sizeEntry1.setDouble(outs.get(0).size);
+                xEntry2.setDouble(outs.get(1).pt.x);
+                yEntry2.setDouble(outs.get(1).pt.y);
+                sizeEntry2.setDouble(outs.get(1).size);
+                */
+              }
+              else {
+                xEntry1.setDouble(-1000);
+                sizeEntry1.setDouble(0);
               }
       });
       visionThread.start();
