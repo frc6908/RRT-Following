@@ -239,10 +239,10 @@ public final class Main {
 
     xEntry1.setDouble(-1000);
     yEntry1.setDouble(-1000);
-    sizeEntry1.setDouble(-1000);
+    sizeEntry1.setDouble(0);
     xEntry2.setDouble(-1000);
     yEntry2.setDouble(-1000);
-    sizeEntry2.setDouble(-1000);
+    sizeEntry2.setDouble(0);
 
     if (server) {
       System.out.println("Setting up NetworkTables server");
