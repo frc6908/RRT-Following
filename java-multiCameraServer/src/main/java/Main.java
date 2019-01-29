@@ -278,8 +278,8 @@ public final class Main {
                 */
               }
               else {
-                xEntry1.setDouble(-1000);
-                sizeEntry1.setDouble(0);
+                xEntry1.setDouble(0);
+                // sizeEntry1.setDouble(0);
               }
       });
       visionThread.start();
