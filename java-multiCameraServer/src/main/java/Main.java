@@ -266,19 +266,19 @@ public final class Main {
               if (!pipeline.filterContoursOutput().isEmpty()) {
                 List<MatOfPoint> outs = pipeline.filterContoursOutput();
                 Rect r = Imgproc.boundingRect(outs.get(0));
+                Rect r2 = Imgproc.boundingRect(outs.get(1));
                 // upload centerX and size of the contour to network tables
                 xEntry1.setDouble(r.x + (r.width / 2));
                 sizeEntry1.setDouble(r.area());
-                /* 
-                yEntry1.setDouble(outs.get(0).pt.y);
-                sizeEntry1.setDouble(outs.get(0).size);
-                xEntry2.setDouble(outs.get(1).pt.x);
-                yEntry2.setDouble(outs.get(1).pt.y);
-                sizeEntry2.setDouble(outs.get(1).size);
-                */
+                yEntry1.setDouble(r.y + (r.height / 2));
+
+                xEntry2.setDouble(r2.x + (r2.width / 2));
+                yEntry2.setDouble(r2.y + (r2.height / 2));
+                sizeEntry2.setDouble(r2.area());
               }
               else {
                 xEntry1.setDouble(0);
+                xEntry2.setDouble(0);
                 // sizeEntry1.setDouble(0);
               }
       });
